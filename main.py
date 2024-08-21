@@ -2,7 +2,7 @@ import requests
 import socket
 import platform
 import telebot
-from geopy.geocoders import Nominatim
+from geopy.geocoders import Photon
 
 # Здесь нужно вставить токен вашего бота в Telegram
 TOKEN = '6509408965:AAH8SK85SBOH6s16nl6k66noIyTAsmunLLY'
@@ -33,7 +33,7 @@ def get_device_info():
 
 # Функция для получения местоположения по IP-адресу
 def get_location(ip_address):
-    geolocator = Nominatim(user_agent="geoapiExercises")
+    geolocator = Photon(user_agent="measurements")
     location = geolocator.geocode(ip_address)
     if location:
         return location.address
